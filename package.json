@@ -1,0 +1,32 @@
+{
+  "name": "steele",
+  "version": "1.0.0",
+  "author": "Jonathan Steele <jonathan@steele.pro> (https://steele.pro)",
+  "dependencies": {
+    "babel-plugin-styled-components": "^1.5.1",
+    "dotenv": "^6.0.0",
+    "gatsby": "next",
+    "gatsby-image": "^2.0.0-beta.7",
+    "gatsby-plugin-react-helmet": "next",
+    "gatsby-plugin-styled-components": "^3.0.0-beta.3",
+    "gatsby-source-contentful": "^2.0.1-beta.15",
+    "gatsby-transformer-remark": "^2.1.1-beta.5",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-helmet": "^5.2.0",
+    "styled-components": "^3.3.3"
+  },
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write 'src/**/*.js'"
+  },
+  "devDependencies": {
+    "prettier": "^1.13.7"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ynnoj/steele"
+  }
+}
