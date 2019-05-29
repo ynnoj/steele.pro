@@ -2,9 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
-import { injectGlobal } from 'styled-components'
+import { createGlobalStyle } from 'styled-components'
 
-injectGlobal`
+const GlobalStyle = createGlobalStyle`
   body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     margin: 0;
@@ -35,6 +35,7 @@ const Layout = ({ children, data }) => (
             { name: 'keywords', content: 'JavaScript, Newcastle upon Tyne' },
           ]}
         />
+        <GlobalStyle />
         <div>{children}</div>
       </>
     )}
