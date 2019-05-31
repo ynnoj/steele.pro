@@ -1,0 +1,29 @@
+import { graphql } from 'gatsby'
+import Img from 'gatsby-image'
+import tw from 'tailwind.macro'
+
+export const Section = tw.section`flex flex-col items-center justify-center min-h-screen`
+
+<Section>
+
+<Img
+  alt="Jonathan Steele"
+  fixed={props.data.contentfulAsset.fixed}
+  title="Jonathan Steele"
+/>
+
+# Hey, I'm Jonathan Steele
+
+Dad. Developer at [Moltin](https://moltin.com). Building [First Means Everything](https://firstmeanseverything.com)
+
+</Section>
+
+export const query = graphql`
+  query {
+    contentfulAsset(title: { eq: "avatar" }) {
+      fixed(width: 120, quality: 100) {
+        ...GatsbyContentfulFixed
+      }
+    }
+  }
+`
