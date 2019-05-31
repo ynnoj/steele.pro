@@ -2,7 +2,11 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
+import { MDXProvider } from '@mdx-js/react'
 import { createGlobalStyle } from 'styled-components'
+
+import Link from './link'
+import Title from './title'
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -36,7 +40,14 @@ const Layout = ({ children, data }) => (
           ]}
         />
         <GlobalStyle />
-        <div>{children}</div>
+        <MDXProvider
+          components={{
+            a: Link,
+            h1: Title,
+          }}
+        >
+          {children}
+        </MDXProvider>
       </>
     )}
   />
