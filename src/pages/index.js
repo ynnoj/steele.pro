@@ -1,64 +1,35 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import styled from 'styled-components'
+import tw from 'tailwind.macro'
 import Img from 'gatsby-image'
 
 import Layout from '../components/layout'
 
-const Section = styled.section`
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  min-height: 100vh;
-  padding: 0 4rem;
+const Section = tw.section`flex flex-col sm:flex-row items-center justify-center min-h-screen py-0 px-8`
 
-  @media (min-width: 30rem) {
-    flex-direction: row;
-  }
-`
+const Profile = tw.div`flex flex-col sm:ml-4 mt-4 sm:mt-0`
 
-const Profile = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin: 1rem 0 0 0;
-
-  @media (min-width: 30rem) {
-    margin: 0 0 0 1rem;
-  }
-`
-
-const Title = styled.h1`
-  font-size: 2rem;
-  margin: 0 0 1rem;
-`
+const Title = tw.h1`mb-2 mt-0 text-4xl`
 
 const Subtitle = styled.div`
   p {
-    line-height: 1.4;
-    margin: 0;
+    ${tw`leading-normal m-0`}
   }
 
   a {
-    border-bottom: 2px solid silver;
-    color: inherit;
-    padding-bottom: 0.1rem;
-    text-decoration: none;
-    position: relative;
+    ${tw`border-0 border-b-2 border-gray-500 border-solid no-underline pb-1 relative text-black`}
 
     &:after {
+      ${tw`absolute border-0 border-b-2 border-indigo-700 border-solid left-0 w-0`}
       content: '';
       transition: width 0.2s ease-in-out;
-      border-bottom: 2px solid #784cab;
-      position: absolute;
-      left: 0;
       bottom: calc(0px - 0.15rem);
-      width: 0;
     }
 
     &:hover:after,
     &:active:after {
-      width: 100%;
+      ${tw`w-full`}
     }
   }
 `
