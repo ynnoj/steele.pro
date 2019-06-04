@@ -3,10 +3,26 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 import { MDXProvider } from '@mdx-js/react'
-import { createGlobalStyle } from 'styled-components'
+import styled, { createGlobalStyle } from 'styled-components'
+import tw from 'tailwind.macro'
 
-import Link from './link'
-import Title from './title'
+const Link = styled.a`
+  ${tw`border-0 border-b-2 border-gray-500 border-solid no-underline pb-1 relative text-black`}
+
+  &:after {
+    ${tw`absolute border-0 border-b-2 border-indigo-700 border-solid left-0 w-0`}
+    content: '';
+    transition: width 0.2s ease-in-out;
+    bottom: calc(0px - 0.15rem);
+  }
+
+  &:hover:after,
+  &:active:after {
+    ${tw`w-full`}
+  }
+`
+const Section = tw.section`flex flex-col md:flex-row items-center justify-center min-h-screen px-4`
+const Title = tw.h1`m-0 text-3xl md:text-4xl`
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -42,11 +58,11 @@ const Layout = ({ children, data }) => (
         <GlobalStyle />
         <MDXProvider
           components={{
-            a: Link,
-            h1: Title,
+            a: props => <Link {...props} />,
+            h1: props => <Title {...props} />,
           }}
         >
-          {children}
+          <Section>{children}</Section>
         </MDXProvider>
       </>
     )}
