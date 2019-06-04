@@ -2,9 +2,7 @@ import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import tw from 'tailwind.macro'
 
-export const Section = tw.section`flex flex-col items-center justify-center min-h-screen`
-
-<Section>
+export const Profile = tw.div`ml-0 md:ml-4 mt-4 md:mt-0`
 
 <Img
   alt="Jonathan Steele"
@@ -12,11 +10,13 @@ export const Section = tw.section`flex flex-col items-center justify-center min-
   title="Jonathan Steele"
 />
 
+<Profile>
+
 # Hey, I'm Jonathan Steele
 
 Dad. Developer at [Moltin](https://moltin.com). Building [First Means Everything](https://firstmeanseverything.com)
 
-</Section>
+</Profile>
 
 export const query = graphql`
   query {
