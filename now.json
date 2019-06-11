@@ -1,0 +1,20 @@
+{
+  "version": 2,
+  "name": "steele.pro",
+  "alias": "steele.pro",
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@now/static-build",
+      "config": {
+        "distDir": "public"
+      }
+    }
+  ],
+  "build": {
+    "env": {
+      "CONTENTFUL_SPACE": "@steele-pro-contentful-space",
+      "CONTENTFUL_TOKEN": "@steele-pro-contentful-token"
+    }
+  }
+}
