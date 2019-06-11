@@ -11,8 +11,10 @@
       }
     }
   ],
-  "env": {
-    "CONTENTFUL_SPACE": "@steele-pro-contentful-space",
-    "CONTENTFUL_TOKEN": "@steele-pro-contentful-token"
+  "build": {
+    "env": {
+      "CONTENTFUL_SPACE": "@steele-pro-contentful-space",
+      "CONTENTFUL_TOKEN": "@steele-pro-contentful-token"
+    }
   }
 }
