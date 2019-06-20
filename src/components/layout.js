@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
-import { StaticQuery, graphql } from 'gatsby'
+import { graphql, useStaticQuery } from 'gatsby'
 import { MDXProvider } from '@mdx-js/react'
 import styled, { createGlobalStyle } from 'styled-components'
 import tw from 'tailwind.macro'
@@ -31,15 +31,13 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 
-const Layout = ({ children, data }) => (
-  <StaticQuery
-    query={graphql`
-      query SiteTitleQuery {
-        site {
-          siteMetadata {
-            description
-            title
-          }
+const Layout = ({ children }) => {
+  const { site } = useStaticQuery(graphql`
+    query SiteTitleQuery {
+      site {
+        siteMetadata {
+          description
+          title
         }
       }
     `}
