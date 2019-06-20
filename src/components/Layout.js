@@ -6,8 +6,8 @@ import { MDXProvider } from '@mdx-js/react'
 import styled, { createGlobalStyle } from 'styled-components'
 import tw from 'tailwind.macro'
 
-const Link = styled.a`
-  ${tw`border-0 border-b-2 border-gray-500 border-solid no-underline pb-1 relative text-black`}
+export const Link = styled.a`
+  ${tw`border-0 border-b-2 border-gray-200 border-solid no-underline pb-1 relative text-gray-800`}
 
   &:after {
     ${tw`absolute border-0 border-b-2 border-indigo-700 border-solid left-0 w-0`}
