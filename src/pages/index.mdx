@@ -1,22 +1,17 @@
 import { graphql } from 'gatsby'
-import Img from 'gatsby-image'
-import tw from 'tailwind.macro'
 
-export const Profile = tw.div`ml-0 md:ml-4 mt-4 md:mt-0`
+import TalkList from '../components/TalkList'
+import Profile from '../components/Profile'
 
-<Img
-  alt="Jonathan Steele"
-  fixed={props.data.contentfulAsset.fixed}
-  title="Jonathan Steele"
-/>
-
-<Profile>
+<Profile avatar={props.data.contentfulAsset.fixed}>
 
 # Hey, I'm Jonathan Steele
 
 Dad. Developer at [Moltin](https://moltin.com). Building [First Means Everything](https://firstmeanseverything.com)
 
 </Profile>
+
+<TalkList />
 
 export const query = graphql`
   query {
