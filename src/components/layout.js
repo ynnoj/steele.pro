@@ -21,7 +21,7 @@ const Link = styled.a`
     ${tw`w-full`}
   }
 `
-const Section = tw.section`flex flex-col md:flex-row items-center justify-center min-h-screen px-4`
+const Main = tw.main`md:w-3/4 mx-auto px-6 md:px-4 text-gray-800`
 const Title = tw.h1`m-0 text-3xl md:text-4xl`
 
 const GlobalStyle = createGlobalStyle`
@@ -31,7 +31,7 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 
-const Layout = ({ children }) => {
+function Layout({ children }) {
   const { site } = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -40,32 +40,33 @@ const Layout = ({ children }) => {
           title
         }
       }
-    `}
-    render={data => (
-      <>
-        <Helmet
-          title={data.site.siteMetadata.title}
-          meta={[
-            {
-              name: 'description',
-              content: data.site.siteMetadata.description,
-            },
-            { name: 'keywords', content: 'JavaScript, Newcastle upon Tyne' },
-          ]}
-        />
-        <GlobalStyle />
-        <MDXProvider
-          components={{
-            a: props => <Link {...props} />,
-            h1: props => <Title {...props} />,
-          }}
-        >
-          <Section>{children}</Section>
-        </MDXProvider>
-      </>
-    )}
-  />
-)
+    }
+  `)
+
+  return (
+    <React.Fragment>
+      <Helmet
+        title={site.siteMetadata.title}
+        meta={[
+          {
+            name: 'description',
+            content: site.siteMetadata.description,
+          },
+          { name: 'keywords', content: 'JavaScript, Newcastle upon Tyne' },
+        ]}
+      />
+      <GlobalStyle />
+      <MDXProvider
+        components={{
+          a: props => <Link {...props} />,
+          h1: props => <Title {...props} />,
+        }}
+      >
+        <Main>{children}</Main>
+      </MDXProvider>
+    </React.Fragment>
+  )
+}
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
