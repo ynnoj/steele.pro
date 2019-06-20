@@ -7,11 +7,12 @@ import { Link } from './Layout'
 
 const TalkDate = tw.span`text-sm text-gray-600`
 const TalkLinkList = tw.ul`flex list-none -mx-4 p-0`
+const TalkLinkListItem = tw.li`mx-4`
 const Talk = styled.article`
   ${({ lastChild }) => (lastChild ? tw`mb-0` : tw`mb-8`)}
 `
-const TalkLink = tw(Link)`mx-4`
 const TalkTitle = tw.h3`mb-2`
+const Title = tw.h2`mb-6 mt-0`
 
 function TalkList() {
   const {
@@ -36,7 +37,7 @@ function TalkList() {
 
   return (
     <section>
-      <h2>Talks</h2>
+      <Title>Talks</Title>
       {talks.map(({ node: talk }, index) => {
         const talkLinks = [
           ...(talk.deckUrl
@@ -50,7 +51,7 @@ function TalkList() {
           ...(talk.repositoryUrl
             ? [
                 {
-                  label: 'GitHub',
+                  label: 'Code',
                   url: talk.repositoryUrl,
                 },
               ]
@@ -74,9 +75,9 @@ function TalkList() {
               <TalkLinkList>
                 {talkLinks.map(link => {
                   return (
-                    <li key={link.label}>
-                      <TalkLink href={link.url}>{link.label}</TalkLink>
-                    </li>
+                    <TalkLinkListItem key={link.label}>
+                      <Link href={link.url}>{link.label}</Link>
+                    </TalkLinkListItem>
                   )
                 })}
               </TalkLinkList>

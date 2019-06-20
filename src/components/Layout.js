@@ -21,6 +21,8 @@ export const Link = styled.a`
     ${tw`w-full`}
   }
 `
+const List = tw.ul`flex list-none -mx-4 p-0`
+const ListItem = tw.li`mx-4`
 const Main = tw.main`md:w-3/4 mx-auto px-6 md:px-4 text-gray-800`
 const Title = tw.h1`m-0 text-3xl md:text-4xl`
 
@@ -60,6 +62,8 @@ function Layout({ children }) {
         components={{
           a: props => <Link {...props} />,
           h1: props => <Title {...props} />,
+          ul: props => <List {...props} />,
+          li: props => <ListItem {...props} />,
         }}
       >
         <Main>{children}</Main>

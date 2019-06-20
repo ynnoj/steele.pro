@@ -1,7 +1,10 @@
 import { graphql } from 'gatsby'
+import tw from 'tailwind.macro'
 
 import TalkList from '../components/TalkList'
 import Profile from '../components/Profile'
+
+export const Footer = tw.footer`border-0 border-t-2 border-gray-200 border-solid flex flex-col md:flex-row items-center justify-end mt-12 py-8`
 
 <Profile avatar={props.data.contentfulAsset.fixed}>
 
@@ -12,6 +15,15 @@ Dad. Developer at [Moltin](https://moltin.com). Building [First Means Everything
 </Profile>
 
 <TalkList />
+
+<Footer>
+
+- [GitHub](https://github.com/ynnoj)
+- [Twitter](https://twitter.com/ynnoj)
+- [YouTube](https://youtube.com/channel/UC9Ylb1Sg5O1cwR24BZXqrGg)
+- [LinkedIn](https://linkedin.com/in/ynnoj/)
+
+</Footer>
 
 export const query = graphql`
   query {
