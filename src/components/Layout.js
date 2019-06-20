@@ -21,7 +21,7 @@ export const Link = styled.a`
     ${tw`w-full`}
   }
 `
-const List = tw.ul`flex list-none -mx-4 p-0`
+const List = tw.ul`flex list-none my-0 -mx-4 p-0`
 const ListItem = tw.li`mx-4`
 const Main = tw.main`md:w-3/4 mx-auto px-6 md:px-4 text-gray-800`
 const Text = tw.p`m-0`
