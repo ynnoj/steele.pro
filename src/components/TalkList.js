@@ -3,7 +3,7 @@ import { graphql, useStaticQuery } from 'gatsby'
 import styled from 'styled-components'
 import tw from 'tailwind.macro'
 
-import { Link } from './layout'
+import { Link } from './Layout'
 
 const TalkDate = tw.span`text-sm text-gray-600`
 const TalkLinkList = tw.ul`flex list-none -mx-4 p-0`
