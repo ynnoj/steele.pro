@@ -1,29 +1,39 @@
 import { graphql } from 'gatsby'
 import tw from 'tailwind.macro'
 
-import TalkList from '../components/TalkList'
+import About from '../components/About'
+import PageFooter from '../components/PageFooter'
 import Profile from '../components/Profile'
-
-export const Footer = tw.footer`border-0 border-t-2 border-gray-200 border-solid flex flex-col md:flex-row items-center justify-center md:justify-end mt-6 md:mt-8 py-6 md:py-8`
+import TalkList from '../components/TalkList'
 
 <Profile avatar={props.data.contentfulAsset.fixed}>
 
 # Hey, I'm Jonathan Steele
 
-Dad. Developer at [Moltin](https://moltin.com). Building [First Means Everything](https://firstmeanseverything.com)
+Dad. Developer. Building [First Means Everything](https://firstmeanseverything.com)
 
 </Profile>
 
+<About>
+
+I'm a web developer working with JavaScript and Node.js. I'm an avid learner, keen to explore and understand emerging libraries and web technologies.
+
+Right now I'm into at [Gatbsy](https://gatsbyjs.org), [GraphQL](https://graphql.org/) and serverless architecture via the [Zeit Now](https://zeit.co/now) platform.
+
+Currently at [Moltin](https://moltin.com).
+
+</About>
+
 <TalkList />
 
-<Footer>
+<PageFooter>
 
 - [GitHub](https://github.com/ynnoj)
 - [Twitter](https://twitter.com/ynnoj)
 - [YouTube](https://youtube.com/channel/UC9Ylb1Sg5O1cwR24BZXqrGg)
 - [LinkedIn](https://linkedin.com/in/ynnoj/)
 
-</Footer>
+</PageFooter>
 
 export const query = graphql`
   query {

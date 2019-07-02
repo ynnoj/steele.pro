@@ -24,7 +24,7 @@ export const Link = styled.a`
 const List = tw.ul`flex list-none my-0 -mx-4 p-0`
 const ListItem = tw.li`mx-4`
 const Main = tw.main`md:w-3/4 mx-auto px-6 md:px-4 text-gray-800`
-const Text = tw.p`m-0`
+const Text = tw.p`mt-0`
 const Title = tw.h1`mb-6 mt-0 text-3xl md:text-4xl`
 
 const GlobalStyle = createGlobalStyle`
