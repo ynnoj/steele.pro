@@ -12,7 +12,7 @@ const Talk = styled.article`
   ${({ lastChild }) => (lastChild ? tw`mb-0` : tw`mb-8`)}
 `
 const TalkTitle = tw.h3`mb-2`
-const Title = tw.h2`mb-6 mt-0`
+const Title = tw.h2`mb-6 mt-0 text-2xl md:text-3xl`
 
 function TalkList() {
   const {
