@@ -16,20 +16,17 @@ const Title = tw.h2`mb-6 mt-0 text-2xl md:text-3xl`
 
 function TalkList() {
   const {
-    allContentfulTalk: { edges: talks },
+    gcms: { talks },
   } = useStaticQuery(graphql`
     query AllTalks {
-      allContentfulTalk(sort: { fields: date, order: DESC }) {
-        edges {
-          node {
-            date(formatString: "LL")
-            deckUrl
-            description
-            id
-            title
-            repositoryUrl
-            videoUrl
-          }
+      gcms {
+        talks(orderBy: date_DESC) {
+          date
+          deckUrl
+          description
+          repositoryUrl
+          title
+          videoUrl
         }
       }
     }
@@ -38,7 +35,7 @@ function TalkList() {
   return (
     <section>
       <Title>Talks</Title>
-      {talks.map(({ node: talk }, index) => {
+      {talks.map((talk, index) => {
         const talkLinks = [
           ...(talk.deckUrl
             ? [
@@ -66,10 +63,16 @@ function TalkList() {
             : []),
         ]
 
+        const formattedDate = new Intl.DateTimeFormat('en-US', {
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric',
+        }).format(new Date(talk.date))
+
         return (
-          <Talk key={talk.id} lastChild={index + 1 === talks.length}>
+          <Talk key={index} lastChild={index + 1 === talks.length}>
             <TalkTitle>{talk.title}</TalkTitle>
-            <TalkDate>{talk.date}</TalkDate>
+            <TalkDate>{formattedDate}</TalkDate>
             <p>{talk.description}</p>
             {talkLinks.length > 0 && (
               <TalkLinkList>

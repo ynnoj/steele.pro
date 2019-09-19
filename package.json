@@ -12,8 +12,9 @@
     "gatsby-mdx": "^0.6.3",
     "gatsby-plugin-react-helmet": "^3.0.12",
     "gatsby-plugin-styled-components": "^3.0.7",
-    "gatsby-source-contentful": "^2.0.65",
     "gatsby-source-filesystem": "^2.0.37",
+    "gatsby-source-graphql": "^2.1.14",
+    "graphcms-image": "^1.1.0-beta4",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1",
@@ -23,9 +24,11 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
-    "develop": "gatsby develop",
+    "clean": "gatsby clean",
+    "dev": "yarn run clean && gatsby develop",
     "format": "prettier --write 'src/**/*.js'",
-    "now-build": "gatsby build"
+    "now-build": "yarn run build",
+    "now-dev": "yarn run clean && yarn run develop"
   },
   "devDependencies": {
     "prettier": "^1.17.1"
