@@ -6,7 +6,7 @@ import PageFooter from '../components/PageFooter'
 import Profile from '../components/Profile'
 import TalkList from '../components/TalkList'
 
-<Profile avatar={props.data.contentfulAsset.fixed}>
+<Profile avatar={props.data.gcms.asset}>
 
 # Hey, I'm Jonathan Steele
 
@@ -36,10 +36,12 @@ Currently at [Moltin](https://moltin.com).
 </PageFooter>
 
 export const query = graphql`
-  query {
-    contentfulAsset(title: { eq: "avatar" }) {
-      fixed(width: 120, quality: 100) {
-        ...GatsbyContentfulFixed
+  query ProfileImg {
+    gcms {
+      asset(where: { slug: "avatar" }) {
+        handle
+        height
+        width
       }
     }
   }
