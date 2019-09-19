@@ -17,10 +17,14 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-components`,
     {
-      resolve: `gatsby-source-contentful`,
+      resolve: `gatsby-source-graphql`,
       options: {
-        spaceId: process.env.CONTENTFUL_SPACE,
-        accessToken: process.env.CONTENTFUL_TOKEN,
+        typeName: `GraphCMS`,
+        fieldName: `gcms`,
+        url: process.env.GRAPHCMS_URL,
+        headers: {
+          Authorization: `Bearer ${process.env.GRAPHCMS_TOKEN}`,
+        },
       },
     },
   ],
