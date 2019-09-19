@@ -13,7 +13,7 @@
   ],
   "build": {
     "env": {
-      "GRAPHCMS_TOKEN": "steele-pro-graphcms-token",
+      "GRAPHCMS_TOKEN": "@steele-pro-graphcms-token",
       "GRAPHCMS_URL": "@steele-pro-graphcms-url"
     }
   }
