@@ -72,8 +72,8 @@ function TalkList() {
                         className="text-gray-600 text-sm hover:text-gray-900 hover:underline"
                         href={link.url}
                         target="blank"
-                        norel={true}
-                        nofollow={true}
+                        norel="true"
+                        nofollow="true"
                       >
                         {link.label} &#x2192;
                       </a>
