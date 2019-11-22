@@ -21,7 +21,7 @@ function TalkList() {
 
   return (
     <section>
-      <h2 className="mb-6 mt-0 text-2xl md:text-3xl">Talks</h2>
+      <h2 className="font-semibold mb-4 text-2xl md:text-3xl">Talks</h2>
       {talks.map((talk, index) => {
         const talkLinks = [
           ...(talk.deckUrl
@@ -58,15 +58,25 @@ function TalkList() {
 
         return (
           <article key={index} className="mb-8 last:mb-0">
-            <h3 className="mb-2">{talk.title}</h3>
-            <span className="text-sm text-gray-600">{formattedDate}</span>
-            <p>{talk.description}</p>
+            <div className="mb-4">
+              <h3 className="font-medium text-xl">{talk.title}</h3>
+              <span className="text-sm text-gray-600">{formattedDate}</span>
+            </div>
+            <p className="mb-4">{talk.description}</p>
             {talkLinks.length > 0 && (
-              <ul className="flex list-none -mx-4 p-0">
+              <ul className="flex list-none -mx-2 p-0">
                 {talkLinks.map(link => {
                   return (
-                    <li key={link.label} className="mx-4">
-                      <a href={link.url}>{link.label}</a>
+                    <li key={link.label} className="mx-2">
+                      <a
+                        className="text-gray-600 text-sm hover:text-gray-900 hover:underline"
+                        href={link.url}
+                        target="blank"
+                        norel={true}
+                        nofollow={true}
+                      >
+                        {link.label} &#x2192;
+                      </a>
                     </li>
                   )
                 })}

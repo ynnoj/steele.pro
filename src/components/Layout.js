@@ -32,14 +32,18 @@ function Layout({ children }) {
       />
       <MDXProvider
         components={{
-          a: props => <a {...props}>{props.children}</a>,
+          a: props => (
+            <a className="font-medium underline" {...props}>
+              {props.children}
+            </a>
+          ),
           p: props => (
-            <p className="mt-0" {...props}>
+            <p className="leading-relaxed mb-2" {...props}>
               {props.children}
             </p>
           ),
           h1: props => (
-            <h1 className="mb-6 mt-0 text-3xl md:text-4xl" {...props}>
+            <h1 className="font-semibold mb-2 text-3xl md:text-4xl" {...props}>
               {props.children}
             </h1>
           ),
