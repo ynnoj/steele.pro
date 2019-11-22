@@ -1,17 +1,13 @@
 import React from 'react'
-import tw from 'tailwind.macro'
-
-const Section = tw.section`mb-6`
-const Title = tw.h2`mb-6 mt-0 text-2xl md:text-3xl`
 
 function About({ children }) {
   return (
-    <Section>
+    <section className="mb-6">
       <React.Fragment>
-        <Title>About</Title>
+        <h2 className="font-semibold mb-4 text-2xl md:text-3xl">About</h2>
         {children}
       </React.Fragment>
-    </Section>
+    </section>
   )
 }
 
