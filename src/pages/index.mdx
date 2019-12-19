@@ -5,7 +5,7 @@ import PageFooter from '../components/PageFooter'
 import Profile from '../components/Profile'
 import TalkList from '../components/TalkList'
 
-<Profile avatar={props.data.gcms.asset}>
+<Profile avatar={props.data.gcms.asset.node}>
 
 # Hey, I'm Jonathan Steele
 
@@ -38,9 +38,14 @@ export const query = graphql`
   query ProfileImg {
     gcms {
       asset(where: { slug: "avatar" }) {
-        handle
-        height
-        width
+        node {
+          childImageSharp {
+            fluid(maxWidth: 560) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        url
       }
     }
   }
