@@ -17,8 +17,6 @@ function Nav() {
     }
   `)
 
-  console.log(pages)
-
   return (
     <nav>
       <ul className="flex -mx-2">
