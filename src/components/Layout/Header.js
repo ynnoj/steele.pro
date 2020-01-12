@@ -1,6 +1,8 @@
 import React from 'react'
-import { graphql, useStaticQuery } from 'gatsby'
+import { graphql, Link, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
+
+import Nav from './Nav'
 
 function Header() {
   const {
@@ -23,18 +25,24 @@ function Header() {
       }
     }
   `)
+
   return (
-    <header className="border-0 border-b-2 border-gray-200 border-solid flex flex-col md:flex-row items-center mb-6 md:mb-8 py-6 md:py-8">
-      <Img
-        fluid={avatar.childImageSharp.fluid}
-        className="mb-4 md:mb-0 md:mr-8 rounded-sm w-24"
-        alt="Jonathan Steele"
-        title="Jonathan Steele"
-      />
-      <div className="flex flex-col">
-        <h1 className="font-semibold mb-2 text-3xl md:text-4xl">
-          Jonathan Steele
-        </h1>
+    <header className="border-0 border-b-2 border-gray-200 border-solid items-center px-4 py-6 md:py-8">
+      <div className="flex items-center justify-between md:w-3/4 mx-auto">
+        <div className="flex items-center">
+          <Link to="/" className="mr-4">
+            <Img
+              fluid={avatar.childImageSharp.fluid}
+              className="rounded-full w-12"
+              alt="Jonathan Steele"
+              title="Jonathan Steele"
+            />
+          </Link>
+          <Link to="/" className="font-medium text-lg md:text-xl">
+            Jonathan Steele
+          </Link>
+        </div>
+        <Nav />
       </div>
     </header>
   )

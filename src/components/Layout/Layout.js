@@ -9,7 +9,7 @@ import TalkList from '../TalkList'
 
 function Layout({ children }) {
   const { site } = useStaticQuery(graphql`
-    query SiteTitleQuery {
+    {
       site {
         siteMetadata {
           description
