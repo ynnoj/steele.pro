@@ -5,6 +5,7 @@ import { MDXProvider } from '@mdx-js/react'
 
 import Footer from './Footer'
 import Header from './Header'
+import Renderers from '../Renderers'
 import TalkList from '../TalkList'
 
 function Layout({ children }) {
@@ -33,26 +34,8 @@ function Layout({ children }) {
       />
       <MDXProvider
         components={{
-          a: props => (
-            <a className="font-medium underline" {...props}>
-              {props.children}
-            </a>
-          ),
-          p: props => (
-            <p className="leading-relaxed mb-2" {...props}>
-              {props.children}
-            </p>
-          ),
-          h1: props => (
-            <h1 className="font-semibold mb-2 text-4xl md:text-5xl" {...props}>
-              {props.children}
-            </h1>
-          ),
-          ul: props => (
-            <ul className="flex list-none my-0 -mx-4 p-0" {...props} />
-          ),
-          li: props => <li className="mx-4" {...props} />,
           TalkList,
+          ...Renderers,
         }}
       >
         <div className="min-h-screen">
