@@ -21,21 +21,23 @@ function Footer() {
   ]
 
   return (
-    <footer className="border-0 border-t-2 border-gray-200 border-solid flex flex-col md:flex-row items-center justify-center md:justify-end mt-6 md:mt-8 py-6 md:py-8">
-      <ul className="flex list-none my-0 -mx-4 p-0">
-        {socialLinks.map((link, i) => (
-          <li className="mx-4" key={i}>
-            <a
-              className="font-medium underline"
-              href={link.url}
-              target="_blank"
-              rel="nofollow noopener noreferrer"
-            >
-              {link.label}
-            </a>
-          </li>
-        ))}
-      </ul>
+    <footer className="border-0 border-t-2 border-gray-200 border-solid px-4 py-6 md:py-8">
+      <div className="flex items-center justify-center md:justify-end md:w-3/4 mx-auto">
+        <ul className="flex list-none my-0 -mx-4 p-0">
+          {socialLinks.map((link, i) => (
+            <li className="mx-4" key={i}>
+              <a
+                className="font-semibold hover:text-gray-900 text-gray-600 text-sm tracking-widest uppercase"
+                href={link.url}
+                target="_blank"
+                rel="nofollow noopener noreferrer"
+              >
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
     </footer>
   )
 }

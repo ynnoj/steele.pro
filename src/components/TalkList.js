@@ -21,7 +21,6 @@ function TalkList() {
 
   return (
     <section>
-      <h2 className="font-semibold mb-4 text-2xl md:text-3xl">Talks</h2>
       {talks.map((talk, index) => {
         const talkLinks = [
           ...(talk.deckUrl

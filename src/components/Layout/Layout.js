@@ -5,10 +5,11 @@ import { MDXProvider } from '@mdx-js/react'
 
 import Footer from './Footer'
 import Header from './Header'
+import TalkList from '../TalkList'
 
 function Layout({ children }) {
   const { site } = useStaticQuery(graphql`
-    query SiteTitleQuery {
+    {
       site {
         siteMetadata {
           description
@@ -43,7 +44,7 @@ function Layout({ children }) {
             </p>
           ),
           h1: props => (
-            <h1 className="font-semibold mb-2 text-3xl md:text-4xl" {...props}>
+            <h1 className="font-semibold mb-2 text-4xl md:text-5xl" {...props}>
               {props.children}
             </h1>
           ),
@@ -51,13 +52,14 @@ function Layout({ children }) {
             <ul className="flex list-none my-0 -mx-4 p-0" {...props} />
           ),
           li: props => <li className="mx-4" {...props} />,
+          TalkList,
         }}
       >
-        <main className="md:w-3/4 mx-auto px-6 md:px-4 text-gray-800">
+        <div className="min-h-screen">
           <Header />
-          {children}
+          <main className="mx-auto md:py-8 md:w-3/5 px-4 py-6">{children}</main>
           <Footer />
-        </main>
+        </div>
       </MDXProvider>
     </React.Fragment>
   )
