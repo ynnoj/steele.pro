@@ -1,10 +1,10 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { graphql, useStaticQuery } from 'gatsby'
 import { MDXProvider } from '@mdx-js/react'
 
-import '../styles/index.css'
+import Footer from './Footer'
+import Header from './Header'
 
 function Layout({ children }) {
   const { site } = useStaticQuery(graphql`
@@ -54,15 +54,13 @@ function Layout({ children }) {
         }}
       >
         <main className="md:w-3/4 mx-auto px-6 md:px-4 text-gray-800">
+          <Header />
           {children}
+          <Footer />
         </main>
       </MDXProvider>
     </React.Fragment>
   )
-}
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
 }
 
 export default Layout
