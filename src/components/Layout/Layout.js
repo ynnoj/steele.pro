@@ -1,37 +1,16 @@
 import React from 'react'
-import Helmet from 'react-helmet'
-import { graphql, useStaticQuery } from 'gatsby'
 import { MDXProvider } from '@mdx-js/react'
 
 import Footer from './Footer'
 import Header from './Header'
 import Renderers from '../Renderers'
+import SEO from '../SEO'
 import TalkList from '../TalkList'
 
 function Layout({ children }) {
-  const { site } = useStaticQuery(graphql`
-    {
-      site {
-        siteMetadata {
-          description
-          title
-        }
-      }
-    }
-  `)
-
   return (
     <React.Fragment>
-      <Helmet
-        title={site.siteMetadata.title}
-        meta={[
-          {
-            name: 'description',
-            content: site.siteMetadata.description,
-          },
-          { name: 'keywords', content: 'JavaScript, Newcastle upon Tyne' },
-        ]}
-      />
+      <SEO />
       <MDXProvider
         components={{
           TalkList,
