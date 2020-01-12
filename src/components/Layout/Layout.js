@@ -44,7 +44,7 @@ function Layout({ children }) {
             </p>
           ),
           h1: props => (
-            <h1 className="font-semibold mb-2 text-3xl md:text-4xl" {...props}>
+            <h1 className="font-semibold mb-2 text-4xl md:text-5xl" {...props}>
               {props.children}
             </h1>
           ),
@@ -55,11 +55,11 @@ function Layout({ children }) {
           TalkList,
         }}
       >
-        <main className="md:w-3/4 mx-auto px-6 md:px-4 text-gray-800">
+        <div className="min-h-screen">
           <Header />
-          {children}
+          <main className="mx-auto md:py-8 md:w-3/5 px-4 py-6">{children}</main>
           <Footer />
-        </main>
+        </div>
       </MDXProvider>
     </React.Fragment>
   )
