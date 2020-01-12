@@ -36,5 +36,8 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/ynnoj/steele.pro"
+  },
+  "engines": {
+    "node": "12.x"
   }
 }
