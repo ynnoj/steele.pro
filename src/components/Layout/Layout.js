@@ -5,6 +5,7 @@ import { MDXProvider } from '@mdx-js/react'
 
 import Footer from './Footer'
 import Header from './Header'
+import TalkList from '../TalkList'
 
 function Layout({ children }) {
   const { site } = useStaticQuery(graphql`
@@ -51,6 +52,7 @@ function Layout({ children }) {
             <ul className="flex list-none my-0 -mx-4 p-0" {...props} />
           ),
           li: props => <li className="mx-4" {...props} />,
+          TalkList,
         }}
       >
         <main className="md:w-3/4 mx-auto px-6 md:px-4 text-gray-800">
