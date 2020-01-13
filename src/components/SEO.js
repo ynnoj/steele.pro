@@ -3,20 +3,17 @@ import Helmet from 'react-helmet'
 
 import useSiteMetadata from '../hooks/useSiteMetadata'
 
-function SEO() {
-  const { description, title } = useSiteMetadata()
+function SEO({ pageDescription, pageTitle }) {
+  const { description: siteDescription, title: siteTitle } = useSiteMetadata()
 
   return (
     <Helmet
-      title={title}
-      meta={[
-        {
-          name: 'description',
-          content: description,
-        },
-        { name: 'keywords', content: 'JavaScript, Newcastle upon Tyne' },
-      ]}
-    />
+      defaultTitle={siteTitle}
+      titleTemplate={`%s - ${siteTitle}`}
+      title={pageTitle}
+    >
+      <meta name="description" content={pageDescription || siteDescription} />
+    </Helmet>
   )
 }
 

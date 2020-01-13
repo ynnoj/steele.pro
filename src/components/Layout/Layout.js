@@ -7,10 +7,10 @@ import Renderers from '../Renderers'
 import SEO from '../SEO'
 import TalkList from '../TalkList'
 
-function Layout({ children }) {
+function Layout({ children, pageContext }) {
   return (
     <React.Fragment>
-      <SEO />
+      <SEO pageTitle={pageContext.frontmatter.title} />
       <MDXProvider
         components={{
           TalkList,
