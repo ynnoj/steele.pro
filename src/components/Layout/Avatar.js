@@ -5,22 +5,13 @@ import Img from 'gatsby-image'
 import useSiteMetadata from '../../hooks/useSiteMetadata'
 
 function Avatar() {
-  const {
-    gcms: {
-      asset: { node: avatar },
-    },
-  } = useStaticQuery(graphql`
+  const { avatar } = useStaticQuery(graphql`
     {
-      gcms {
-        asset(where: { slug: "avatar" }) {
-          node {
-            childImageSharp {
-              fluid(maxWidth: 560) {
-                ...GatsbyImageSharpFluid
-              }
-            }
+      avatar: file(relativePath: { eq: "avatar.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 560) {
+            ...GatsbyImageSharpFluid
           }
-          url
         }
       }
     }
