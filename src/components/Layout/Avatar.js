@@ -25,8 +25,8 @@ function Avatar() {
         <Img
           fluid={avatar.childImageSharp.fluid}
           className="rounded-full w-12"
-          alt="Jonathan Steele"
-          title="Jonathan Steele"
+          alt={siteTitle}
+          title={siteTitle}
         />
       </Link>
       <Link to="/" className="font-medium text-lg md:text-xl">
