@@ -1,5 +1,6 @@
 import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
+import Paragraph from './Renderers/Paragraph'
 
 function TalkList() {
   const {
@@ -59,16 +60,18 @@ function TalkList() {
           <article key={index} className="mb-8 last:mb-0">
             <div className="mb-4">
               <h3 className="font-medium text-xl">{talk.title}</h3>
-              <span className="text-sm text-gray-600">{formattedDate}</span>
+              <span className="font-semibold text-gray-600 text-sm tracking-widest uppercase">
+                {formattedDate}
+              </span>
             </div>
-            <p className="mb-4">{talk.description}</p>
+            <Paragraph>{talk.description}</Paragraph>
             {talkLinks.length > 0 && (
               <ul className="flex list-none -mx-2 p-0">
                 {talkLinks.map(link => {
                   return (
                     <li key={link.label} className="mx-2">
                       <a
-                        className="text-gray-600 text-sm hover:text-gray-900 hover:underline"
+                        className="text-gray-600 hover:text-gray-900 hover:underline"
                         href={link.url}
                         target="blank"
                         norel="true"
