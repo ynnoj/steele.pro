@@ -1,5 +1,7 @@
 require(`dotenv`).config()
 
+const path = require('path')
+
 module.exports = {
   siteMetadata: {
     title: `Jonathan Steele`,
@@ -28,6 +30,9 @@ module.exports = {
       options: {
         tailwind: true,
         purgeOnly: [`src/styles/index.css`],
+        content: [
+          path.join(process.cwd(), 'src/**/!(*.d).{ts,js,jsx,tsx,md,mdx}'),
+        ],
       },
     },
     `gatsby-plugin-react-helmet`,
