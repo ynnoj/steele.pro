@@ -8,6 +8,18 @@ module.exports = {
   plugins: [
     {
       resolve: `gatsby-plugin-mdx`,
+      options: {
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              linkImagesToOriginal: false,
+              quality: 80,
+              withWebp: true,
+            },
+          },
+        ],
+      },
     },
     `gatsby-plugin-postcss`,
     {
