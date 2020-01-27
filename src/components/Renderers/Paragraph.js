@@ -2,7 +2,7 @@ import React from 'react'
 
 function Paragraph({ children, ...props }) {
   return (
-    <p className="leading-relaxed mb-2" {...props}>
+    <p className="leading-relaxed mb-4" {...props}>
       {children}
     </p>
   )

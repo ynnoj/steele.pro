@@ -24,8 +24,8 @@ function Nav() {
           <li className="mx-2" key={i}>
             <Link
               to={`/${title.toLowerCase()}`}
-              activeClassName="bg-gray-300"
-              className="font-semibold hover:bg-gray-300 px-2 py-1 rounded text-gray-600 text-sm tracking-widest uppercase"
+              activeClassName="text-gray-900"
+              className="hover:text-gray-900 py-1 text-gray-600 text-lg"
             >
               {title}
             </Link>

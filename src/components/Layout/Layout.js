@@ -5,6 +5,8 @@ import Footer from './Footer'
 import Header from './Header'
 import Renderers from '../Renderers'
 import SEO from '../SEO'
+import SocialLinks from '../SocialLinks'
+import Subtitle from '../Subtitle'
 import TalkList from '../TalkList'
 
 function Layout({ children, pageContext }) {
@@ -13,6 +15,8 @@ function Layout({ children, pageContext }) {
       <SEO pageTitle={pageContext.frontmatter.title} />
       <MDXProvider
         components={{
+          SocialLinks,
+          Subtitle,
           TalkList,
           ...Renderers,
         }}
@@ -20,7 +24,6 @@ function Layout({ children, pageContext }) {
         <div className="min-h-screen">
           <Header />
           <main className="mx-auto md:py-8 md:w-3/5 px-4 py-6">{children}</main>
-          <Footer />
         </div>
       </MDXProvider>
     </React.Fragment>

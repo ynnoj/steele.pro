@@ -8,6 +8,19 @@ module.exports = {
   plugins: [
     {
       resolve: `gatsby-plugin-mdx`,
+      options: {
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              linkImagesToOriginal: false,
+              maxWidth: 800,
+              quality: 80,
+              withWebp: true,
+            },
+          },
+        ],
+      },
     },
     `gatsby-plugin-postcss`,
     {
@@ -24,6 +37,13 @@ module.exports = {
       options: {
         name: `pages`,
         path: `${__dirname}/src/pages/`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/images/`,
       },
     },
     {
