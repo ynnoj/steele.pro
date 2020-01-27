@@ -28,6 +28,9 @@ module.exports = {
       options: {
         tailwind: true,
         purgeOnly: [`src/styles/index.css`],
+        content: [
+          path.join(process.cwd(), 'src/**/!(*.d).{ts,js,jsx,tsx,md,mdx}'),
+        ],
       },
     },
     `gatsby-plugin-react-helmet`,
