@@ -71,7 +71,7 @@ function TalkList() {
                   return (
                     <li key={link.label} className="mx-2">
                       <a
-                        className="text-gray-600 hover:text-gray-900 hover:underline"
+                        className="text-orange-600"
                         href={link.url}
                         target="blank"
                         norel="true"
