@@ -5,6 +5,7 @@ import Footer from './Footer'
 import Header from './Header'
 import Renderers from '../Renderers'
 import SEO from '../SEO'
+import SocialLinks from '../SocialLinks'
 import TalkList from '../TalkList'
 
 function Layout({ children, pageContext }) {
@@ -13,6 +14,7 @@ function Layout({ children, pageContext }) {
       <SEO pageTitle={pageContext.frontmatter.title} />
       <MDXProvider
         components={{
+          SocialLinks,
           TalkList,
           ...Renderers,
         }}
