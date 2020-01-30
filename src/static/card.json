@@ -1,0 +1,21 @@
+{
+  "name": "Jonathan Steele",
+  "handle": "ynnoj",
+  "website": "https://steele.pro",
+  "pronouns": "he/him",
+  "work": {
+    "title": "Developer Advocate",
+    "company": "GraphCMS"
+  },
+  "code": {
+    "npm": "https://npm.im/~ynnoj",
+    "github": "https://github.com/ynnoj"
+  },
+  "social": {
+    "twitter": "https://twitter.com/ynnoj",
+    "linkedin": "https://linkedin.com/in/ynnoj"
+  },
+  "proofs": {
+    "keybase": "https://keybase.io/ynnoj"
+  }
+}
