@@ -67,7 +67,7 @@ function TalkList() {
             <Paragraph>{talk.description}</Paragraph>
             {talkLinks.length > 0 && (
               <ul className="flex list-none -mx-2 p-0">
-                {talkLinks.map(link => {
+                {talkLinks.map((link) => {
                   return (
                     <li key={link.label} className="mx-2">
                       <a
