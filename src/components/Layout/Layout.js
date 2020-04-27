@@ -3,6 +3,7 @@ import { MDXProvider } from '@mdx-js/react'
 
 import Footer from './Footer'
 import Header from './Header'
+import PodcastShowList from '../PodcastShowList'
 import Renderers from '../Renderers'
 import SEO from '../SEO'
 import SocialLinks from '../SocialLinks'
@@ -15,6 +16,7 @@ function Layout({ children, pageContext }) {
       <SEO pageTitle={pageContext.frontmatter.title} />
       <MDXProvider
         components={{
+          PodcastShowList,
           SocialLinks,
           Subtitle,
           TalkList,
