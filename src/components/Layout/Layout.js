@@ -1,7 +1,6 @@
 import React from 'react'
 import { MDXProvider } from '@mdx-js/react'
 
-import Footer from './Footer'
 import Header from './Header'
 import PodcastShowList from '../PodcastShowList'
 import Renderers from '../Renderers'
