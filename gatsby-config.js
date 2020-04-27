@@ -62,6 +62,24 @@ module.exports = {
         },
       },
     },
+    {
+      resolve: `gatsby-source-transistorfm`,
+      options: {
+        url: `https://feeds.transistor.fm/jamcommcerce-radio`,
+      },
+    },
+    {
+      resolve: `gatsby-source-transistorfm`,
+      options: {
+        url: `https://feeds.transistor.fm/devonthetyne`,
+      },
+    },
+    {
+      resolve: `gatsby-source-transistorfm`,
+      options: {
+        url: `https://feeds.transistor.fm/first-means-everything-radio`,
+      },
+    },
     `gatsby-transformer-sharp`,
   ],
 }

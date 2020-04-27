@@ -23,9 +23,9 @@ function SocialLinks({ className }) {
 
   return (
     <div className={classnames(className)}>
-      <ul className="flex list-none my-0 -mx-4 p-0">
+      <ul className="-mx-4 -my-1 flex flex-wrap list-none">
         {socialLinks.map((link, i) => (
-          <li className="mx-4" key={i}>
+          <li className="my-1 mx-4" key={i}>
             <a
               className="font-semibold hover:text-gray-900 text-gray-600 text-sm tracking-widest uppercase"
               href={link.url}
