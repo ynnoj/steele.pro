@@ -25,7 +25,9 @@ function Layout({ children, pageContext }) {
       >
         <div className="min-h-screen">
           <Header />
-          <main className="mx-auto md:py-8 md:w-3/5 px-4 py-6">{children}</main>
+          <main className="mx-auto md:py-8 max-w-3xl px-4 py-6">
+            {children}
+          </main>
         </div>
       </MDXProvider>
     </React.Fragment>
