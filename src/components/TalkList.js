@@ -59,7 +59,7 @@ function TalkList() {
         return (
           <article key={index} className="mb-8 last:mb-0">
             <div className="mb-4">
-              <h3 className="font-medium text-xl">{talk.title}</h3>
+              <h2 className="font-medium text-xl md:text-2xl">{talk.title}</h2>
               <span className="font-semibold text-gray-600 text-sm tracking-widest uppercase">
                 {formattedDate}
               </span>
