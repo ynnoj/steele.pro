@@ -1,7 +1,13 @@
 {
   "name": "steele.pro",
-  "version": "1.0.0",
+  "private": true,
   "author": "Jonathan Steele <jonathan@steele.pro> (https://steele.pro)",
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "clean": "gatsby clean",
+    "dev": "gatsby develop"
+  },
   "dependencies": {
     "@mdx-js/mdx": "1.6.1",
     "@mdx-js/react": "1.6.1",
@@ -23,25 +29,9 @@
     "react-dom": "16.13.1",
     "react-helmet": "6.0.0"
   },
-  "license": "MIT",
-  "scripts": {
-    "build": "gatsby build",
-    "clean": "gatsby clean",
-    "dev": "yarn run clean && gatsby develop",
-    "format": "prettier --write 'src/**/*.js'",
-    "now-build": "yarn run build",
-    "now-dev": "yarn run clean && yarn run develop"
-  },
   "devDependencies": {
     "postcss-preset-env": "6.7.0",
     "prettier": "2.0.5",
     "tailwindcss": "1.4.4"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/ynnoj/steele.pro"
-  },
-  "engines": {
-    "node": "12.x"
   }
 }
