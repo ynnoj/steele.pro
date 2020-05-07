@@ -1,16 +1,21 @@
-import React, { createContext, useContext, useState } from 'react'
+import React, { createContext, useContext, useEffect, useState } from 'react'
+import { globalHistory } from '@reach/router'
 
 const NavigationContext = createContext()
 
 function NavigationProvider({ children }) {
   const [navOpen, setNavOpen] = useState(false)
 
-  const closeNav = () => setNavOpen(false)
-
   const toggleNav = () => setNavOpen((open) => !open)
 
+  useEffect(() => {
+    return globalHistory.listen(({ action }) => {
+      if (action === 'PUSH') setNavOpen(false)
+    })
+  }, [setNavOpen])
+
   return (
-    <NavigationContext.Provider value={{ closeNav, navOpen, toggleNav }}>
+    <NavigationContext.Provider value={{ navOpen, toggleNav }}>
       {children}
     </NavigationContext.Provider>
   )
