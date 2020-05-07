@@ -5,7 +5,7 @@ import classnames from 'classnames'
 import { useNavigation } from '../../context/navigation'
 
 function Nav() {
-  const { closeNav, navOpen } = useNavigation()
+  const { navOpen } = useNavigation()
   const {
     allMdx: { nodes: pages },
   } = useStaticQuery(graphql`
@@ -35,7 +35,6 @@ function Nav() {
               to={`/${title.toLowerCase()}`}
               activeClassName="text-gray-900"
               className="block hover:bg-gray-100 md:hover:bg-transparent hover:text-gray-900 text-gray-600 text-lg px-4 py-2 md:p-0"
-              onClick={closeNav}
             >
               {title}
             </Link>
