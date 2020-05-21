@@ -2,10 +2,7 @@ import React from 'react'
 import { graphql, Link, useStaticQuery } from 'gatsby'
 import classnames from 'classnames'
 
-import { useNavigation } from '../../context/navigation'
-
-function Nav() {
-  const { navOpen } = useNavigation()
+function Nav({ navOpen }) {
   const {
     allMdx: { nodes: pages },
   } = useStaticQuery(graphql`
