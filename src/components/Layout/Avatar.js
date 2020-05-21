@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { memo } from 'react'
 import { graphql, Link, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
 
 import useSiteMetadata from '../../hooks/useSiteMetadata'
 
 function Avatar() {
+  const { title: siteTitle } = useSiteMetadata()
   const { avatar } = useStaticQuery(graphql`
     {
       avatar: file(relativePath: { eq: "avatar.jpg" }) {
@@ -16,8 +17,6 @@ function Avatar() {
       }
     }
   `)
-
-  const { title: siteTitle } = useSiteMetadata()
 
   return (
     <Link to="/" className="flex items-center font-medium text-lg md:text-xl">
@@ -32,4 +31,4 @@ function Avatar() {
   )
 }
 
-export default Avatar
+export default memo(Avatar)

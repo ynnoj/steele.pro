@@ -1,16 +1,24 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { globalHistory } from '@reach/router'
 import classnames from 'classnames'
 
 import Avatar from './Avatar'
 import CloseIcon from '../svg/close.svg'
 import MenuIcon from '../svg/menu.svg'
 import Nav from './Nav'
-import { useNavigation } from '../../context/navigation'
 
 function Header() {
-  const { navOpen, toggleNav } = useNavigation()
+  const [navOpen, setNavOpen] = useState(false)
+
+  const toggleNav = () => setNavOpen((open) => !open)
 
   const Icon = navOpen ? CloseIcon : MenuIcon
+
+  useEffect(() => {
+    return globalHistory.listen(({ action }) => {
+      if (action === 'PUSH') setNavOpen(false)
+    })
+  }, [setNavOpen])
 
   return (
     <header className="border-b-2 border-gray-200 border-solid items-center py-6 md:py-8">
@@ -25,7 +33,7 @@ function Header() {
             />
           </button>
         </div>
-        <Nav />
+        <Nav navOpen={navOpen} />
       </div>
     </header>
   )
