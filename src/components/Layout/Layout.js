@@ -6,7 +6,6 @@ import PodcastShowList from '../PodcastShowList'
 import Renderers from '../Renderers'
 import SEO from '../SEO'
 import SocialLinks from '../SocialLinks'
-import Subtitle from '../Subtitle'
 import TalkList from '../TalkList'
 
 function Layout({ children, pageContext }) {
@@ -17,7 +16,6 @@ function Layout({ children, pageContext }) {
         components={{
           PodcastShowList,
           SocialLinks,
-          Subtitle,
           TalkList,
           ...Renderers,
         }}
