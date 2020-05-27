@@ -6,7 +6,8 @@ import Paragraph from './Paragraph'
 
 const renderers = {
   a: Link,
-  h1: Heading,
+  h1: (props) => Heading({ level: 1, ...props }),
+  h2: (props) => Heading({ level: 2, ...props }),
   ul: List,
   li: ListItem,
   p: Paragraph,
