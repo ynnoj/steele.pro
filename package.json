@@ -22,7 +22,7 @@
     "gatsby-remark-images": "3.3.8",
     "gatsby-source-filesystem": "2.3.8",
     "gatsby-source-graphql": "2.5.2",
-    "gatsby-source-transistorfm": "1.2.10",
+    "gatsby-source-transistorfm": "1.2.11",
     "gatsby-transformer-sharp": "2.5.3",
     "react": "16.13.1",
     "react-dom": "16.13.1",
