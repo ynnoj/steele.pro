@@ -6542,10 +6542,10 @@ gatsby-source-graphql@2.5.2:
     node-fetch "^1.7.3"
     uuid "^3.4.0"
 
-gatsby-source-transistorfm@1.2.10:
-  version "1.2.10"
-  resolved "https://registry.yarnpkg.com/gatsby-source-transistorfm/-/gatsby-source-transistorfm-1.2.10.tgz#b98a2f0bcb4309c086cced77c67e01311947a209"
-  integrity sha512-DPXoVqKthrfUXc2dDmymvb7JlE0VWbEvPv4vKqiSs5m8MqZbWCs2+MN2iLOYTdKz70uzagHA26JWADP563oKxg==
+gatsby-source-transistorfm@1.2.11:
+  version "1.2.11"
+  resolved "https://registry.yarnpkg.com/gatsby-source-transistorfm/-/gatsby-source-transistorfm-1.2.11.tgz#bdbf606f1b0b5d0b0414a2df94b02daf9a0efd12"
+  integrity sha512-FrYA98sTLSv1J9RCI10AEurcEbEJ8EuX5gJLU0b9KpJoOwciXXaUaStRNPlJG76Ph3enfIiLGb6rQfWv88L4HQ==
   dependencies:
     gatsby-source-filesystem "2.3.8"
     rss-parser "3.8.0"
